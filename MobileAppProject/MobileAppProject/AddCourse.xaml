@@ -22,12 +22,12 @@
                 <Label Text="Course End Date"></Label>
                 <DatePicker x:Name="courseaddend" Margin="0,0,0,50"></DatePicker>
 
-                <Label Text="Instructor Information" FontSize="36" Margin="0,0,0,50" HorizontalOptions="Center"></Label>
+                <Label Text="Instructor Information" FontSize="36" Margin="0,0,0,50" HorizontalOptions="CenterAndExpand"></Label>
                 <Entry x:Name="addcoursename" Placeholder="Instructor Name"/>
                 <Entry x:Name="addcoursephone" Placeholder="Instructor Phone"/>
                 <Entry x:Name="addcourseemail" Placeholder="Instructor Email"/>
 
-                <Label Text="Assesment Information" FontSize="36" Margin="0,0,0,50" HorizontalOptions="Center"></Label>
+                <Label Text="Assesment Information" FontSize="36" Margin="0,0,0,50" HorizontalOptions="CenterAndExpand"></Label>
                 <Entry x:Name="addcourseoaname" Placeholder="OA Name"/>
                 <Label Text="OA Assesment Notes"></Label>
                 <Editor x:Name="addcourseoanotes" HeightRequest="100"></Editor>
