@@ -21,7 +21,6 @@ namespace MobileAppProject
 
         async void AddTermSheet(object sender, EventArgs arg)
         {
-            NavigationPage at = new NavigationPage(new AddTerm());
             await Navigation.PushModalAsync(new NavigationPage(new AddTerm()));
         }
     }

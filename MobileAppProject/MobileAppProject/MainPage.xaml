@@ -12,7 +12,9 @@
         <Button Text="Add Term"
                 WidthRequest="150"
                 Clicked="AddTermSheet"></Button>
-        <ListView></ListView>
+        <ListView>
+            <!--Courses will be displayed here-->
+        </ListView>
         
         
     </StackLayout>

@@ -10,16 +10,12 @@ using Xamarin.Forms.Xaml;
 namespace MobileAppProject
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class AddTerm : ContentPage
+	public partial class AddCourse : ContentPage
 	{
-		public AddTerm ()
+		public AddCourse ()
 		{
 			InitializeComponent ();
 		}
-
-        async public void AddCourseSheet(object sender, EventArgs arg)
-        {
-            await Navigation.PushModalAsync(new NavigationPage(new AddCourse()));
-        }
+        
 	}
 }

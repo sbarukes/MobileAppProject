@@ -18,6 +18,14 @@
 
             <Button Text="Add Course"
                 WidthRequest="150"></Button>
+            
+            <ListView>
+                <!--Courses will go here-->
+            </ListView>
+
+            <Button Text="Save Term"
+                    VerticalOptions="EndAndExpand"
+                    WidthRequest="150"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

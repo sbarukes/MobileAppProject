@@ -23,8 +23,12 @@ namespace MobileAppProject
         public string instructoremail { get; set; }
 
         //Assesment Info
-        public string assesmentname { get; set; }
-        public DateTime assesmentdate { get; set; }
+        public string paassesmentname { get; set; }
+        public string panotes { get; set; }
+        public DateTime paassesmentdate { get; set; }
+        public string oaassesmentname { get; set; }
+        public string oanotes { get; set; }
+        public DateTime oaassesmentdate { get; set; }
 
         //DBTerm Reference
         [ForeignKey(typeof(DBTerm))]
