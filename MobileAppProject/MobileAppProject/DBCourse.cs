@@ -12,6 +12,21 @@ namespace MobileAppProject
         [PrimaryKey, AutoIncrement]
         public int courseid { get; set; }
 
+        public string coursetitle { get; set; }
+        public string status { get; set; }
+        public DateTime coursestartdate { get; set; }
+        public DateTime courseenddate { get; set; }
+
+        //instructor info
+        public string instructorname { get; set; }
+        public string instructorphonenumber { get; set; }
+        public string instructoremail { get; set; }
+
+        //Assesment Info
+        public string assesmentname { get; set; }
+        public DateTime assesmentdate { get; set; }
+
+        //DBTerm Reference
         [ForeignKey(typeof(DBTerm))]
         public int termid { get; set; }
     }
