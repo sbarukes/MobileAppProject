@@ -18,9 +18,9 @@
                 </Picker>
 
                 <Label Text="Course Start Date"></Label>
-                <DatePicker x:Name="coursestart"></DatePicker>
+                <DatePicker x:Name="courseaddstart"></DatePicker>
                 <Label Text="Course End Date"></Label>
-                <DatePicker x:Name="courseend" Margin="0,0,0,50"></DatePicker>
+                <DatePicker x:Name="courseaddend" Margin="0,0,0,50"></DatePicker>
 
                 <Label Text="Instructor Information" FontSize="36" Margin="0,0,0,50" HorizontalOptions="Center"></Label>
                 <Entry x:Name="addcoursename" Placeholder="Instructor Name"/>

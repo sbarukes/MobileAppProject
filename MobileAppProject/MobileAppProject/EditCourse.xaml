@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileAppProject.EditCourse">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="Edit Course" FontSize="36" Margin="0,0,0,50" HorizontalOptions="CenterAndExpand"/>
+
+                <Entry x:Name="editcourse" Placeholder="Course Title"/>
+
+                <Label Text="Course Type"></Label>
+                <Picker x:Name="edittypepicker">
+                    <Picker.Items>
+                        <x:String>Active</x:String>
+                        <x:String>InActive</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <Label Text="Course Start Date"></Label>
+                <DatePicker x:Name="courseeditstart"></DatePicker>
+                <Label Text="Course End Date"></Label>
+                <DatePicker x:Name="courseeditend" Margin="0,0,0,50"></DatePicker>
+
+                <Label Text="Instructor Information" FontSize="36" Margin="0,0,0,50" HorizontalOptions="CenterAndExpand"></Label>
+                <Entry x:Name="editcoursename" Placeholder="Instructor Name"/>
+                <Entry x:Name="editcoursephone" Placeholder="Instructor Phone"/>
+                <Entry x:Name="editcourseemail" Placeholder="Instructor Email"/>
+
+                <Label Text="Assesment Information" FontSize="36" Margin="0,0,0,50" HorizontalOptions="CenterAndExpand"></Label>
+                <Entry x:Name="editcourseoaname" Placeholder="OA Name"/>
+                <Label Text="OA Assesment Notes"></Label>
+                <Editor x:Name="editcourseoanotes" HeightRequest="100"></Editor>
+                <Label Text="OA Assesment Date"></Label>
+                <DatePicker x:Name="oaeditdate"></DatePicker>
+                <Entry x:Name="editcoursepaname" Placeholder="PA Name"/>
+                <Label Text="PA Assesment Notes"></Label>
+                <Editor x:Name="editcoursepanotes" HeightRequest="100"></Editor>
+                <Label Text="PA Assesment Date"></Label>
+                <DatePicker x:Name="paeditdate"></DatePicker>
+
+                <Button Text="Save Course"
+                    VerticalOptions="EndAndExpand"
+                    WidthRequest="150"></Button>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
