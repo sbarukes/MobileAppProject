@@ -6,21 +6,15 @@
 
     <StackLayout>
         <!-- Place new controls here -->
-        <Label Text="Term List" 
+        <Label Text="Terms" 
            HorizontalOptions="Center"
-           VerticalOptions="StartAndExpand" 
-               FontSize="36"
-               Margin="0, 50, 0, 0"/>
+               FontSize="36"></Label>
         <Button Text="Add Term"
-                HorizontalOptions="Center"
-                VerticalOptions="StartAndExpand"
-                Margin="0, 0, 0, 300"
-                WidthRequest="150"/>
-        <ScrollView>
-            <ListView>
-                
-            </ListView>
-        </ScrollView>
+                WidthRequest="150"
+                Clicked="AddTermSheet"></Button>
+        <ListView></ListView>
+        
+        
     </StackLayout>
 
 </ContentPage>

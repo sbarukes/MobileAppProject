@@ -12,13 +12,17 @@ namespace MobileAppProject
 {
     public partial class MainPage : ContentPage
     {
-        private ObservableCollection<DataRow> Terms;
 
         public MainPage()
         {
             InitializeComponent();
+            
+        }
 
-            SQLiteConnection 
+        async void AddTermSheet(object sender, EventArgs arg)
+        {
+            NavigationPage at = new NavigationPage(new AddTerm());
+            await Navigation.PushModalAsync(new NavigationPage(new AddTerm()));
         }
     }
 }

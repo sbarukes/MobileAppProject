@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileAppProject.AddTerm">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Add Term"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" 
+                   FontSize="36"/>
+            <Entry x:Name="termtitle" Placeholder="Enter Term Title"
+                   Margin="0,0,0,50"></Entry>
+
+            <Label Text="Term Start Date"></Label>
+            <DatePicker x:Name="termstart"></DatePicker>
+            <Label Text="Term End Date"></Label>
+            <DatePicker x:Name="termend" Margin="0,0,0,50"></DatePicker>
+
+            <Button Text="Add Course"
+                WidthRequest="150"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
