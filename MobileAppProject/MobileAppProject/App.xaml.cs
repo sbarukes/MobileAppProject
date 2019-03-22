@@ -11,7 +11,7 @@ namespace MobileAppProject
         {
             InitializeComponent();
 
-            MainPage = new EditCourse();
+            MainPage = new MainPage();
         }
 
         protected override void OnStart()

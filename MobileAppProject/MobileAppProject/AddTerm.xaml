@@ -17,17 +17,10 @@
                 <Label Text="Term End Date"></Label>
                 <DatePicker x:Name="termend" Margin="0,0,0,50"></DatePicker>
 
-                <Button Text="Add Course"
-                    WidthRequest="150"
-                        Clicked="AddCourseSheet"></Button>
-
-                <ListView>
-                    <!--Courses will go here-->
-                </ListView>
-            
                 <Button Text="Save Term"
                         VerticalOptions="EndAndExpand"
-                        WidthRequest="150"></Button>
+                        WidthRequest="150"
+                        Clicked="AddTermNew"></Button>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

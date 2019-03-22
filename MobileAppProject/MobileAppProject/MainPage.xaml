@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:MobileAppProject"
-             x:Class="MobileAppProject.MainPage">
+             x:Class="MobileAppProject.MainPage"
+             Appearing="RetrieveCreateDB">
 
     <StackLayout>
         <!-- Place new controls here -->
@@ -12,11 +13,23 @@
         <Button Text="Add Term"
                 WidthRequest="150"
                 Clicked="AddTermSheet"></Button>
-        <ListView>
-            <!--Courses will be displayed here-->
+        <ListView x:Name="list"
+                  ItemSelected="list_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" 
+                        HorizontalOptions="FillAndExpand"
+                        Margin="20, 10, 20, 0" >
+                            <Label Text="{Binding title}" HorizontalOptions="StartAndExpand" />
+                            <Label Text="{Binding termid}" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
-        
-        
+
+
     </StackLayout>
 
 </ContentPage>

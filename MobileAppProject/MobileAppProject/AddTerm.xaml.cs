@@ -17,9 +17,18 @@ namespace MobileAppProject
 			InitializeComponent ();
 		}
 
-        async public void AddCourseSheet(object sender, EventArgs arg)
+        public void AddTermNew(object sender, EventArgs arg)
         {
-            await Navigation.PushModalAsync(new NavigationPage(new AddCourse()));
+            DBTerm term = new DBTerm();
+            term.title = termtitle.Text;
+            term.start = termstart.Date;
+            term.end = termend.Date;
+
+            DataHelper dh = new DataHelper();
+            dh.InsertIntoTerm(term);
+
+            Navigation.PopModalAsync();
         }
-	}
+        
+    }
 }

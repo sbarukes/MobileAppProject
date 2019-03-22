@@ -41,7 +41,8 @@
 
                 <Button Text="Save Course"
                     VerticalOptions="EndAndExpand"
-                    WidthRequest="150"></Button>
+                    WidthRequest="150"
+                        Clicked="Button_Clicked"></Button>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

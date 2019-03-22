@@ -13,7 +13,12 @@ namespace MobileAppProject
     {
         [PrimaryKey, AutoIncrement]
         public int termid { get; set; }
+
         public string title { get; set; }
+
+        public DateTime start { get; set; }
+        public DateTime end { get; set; }
+
 
         [OneToMany]
         public List<DBCourse> Courses { get; set; }
