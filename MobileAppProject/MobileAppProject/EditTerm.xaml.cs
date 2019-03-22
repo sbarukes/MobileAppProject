@@ -51,5 +51,14 @@ namespace MobileAppProject
             await Navigation.PushModalAsync(new NavigationPage(new AddCourse(selectedTerm.termid)));
         }
 
+        private void List_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var selectedCourse = list.SelectedItem as DBCourse;
+
+            if (selectedCourse != null)
+            {
+                Navigation.PushModalAsync(new EditCourse(selectedCourse));
+            }
+        }
     }
 }

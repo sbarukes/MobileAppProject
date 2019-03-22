@@ -22,7 +22,8 @@
                     Clicked="AddCourseSheet"
                 WidthRequest="150"></Button>
 
-                <ListView x:Name="list">
+                <ListView x:Name="list"
+                          ItemSelected="List_ItemSelected">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>

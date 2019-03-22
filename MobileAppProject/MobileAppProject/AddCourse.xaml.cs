@@ -30,12 +30,6 @@ namespace MobileAppProject
                 course.instructorname = addcoursename.Text;
                 course.instructoremail = addcourseemail.Text;
                 course.instructorphonenumber = addcoursephone.Text;
-                course.oaassesmentname = addcourseoaname.Text;
-                course.oaassesmentdate = oadate.Date;
-                course.oanotes = addcourseoanotes.Text;
-                course.paassesmentname = addcoursepaname.Text;
-                course.paassesmentdate = padate.Date;
-                course.panotes = addcoursepanotes.Text;
 
                 dh.InsertIntoCourse(course);
                 Navigation.PopModalAsync();

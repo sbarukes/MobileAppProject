@@ -27,18 +27,6 @@
                 <Entry x:Name="addcoursephone" Placeholder="Instructor Phone"/>
                 <Entry x:Name="addcourseemail" Placeholder="Instructor Email"/>
 
-                <Label Text="Assesment Information" FontSize="36" Margin="0,0,0,50" HorizontalOptions="CenterAndExpand"></Label>
-                <Entry x:Name="addcourseoaname" Placeholder="OA Name"/>
-                <Label Text="OA Assesment Notes"></Label>
-                <Editor x:Name="addcourseoanotes" HeightRequest="100"></Editor>
-                <Label Text="OA Assesment Date"></Label>
-                <DatePicker x:Name="oadate"></DatePicker>
-                <Entry x:Name="addcoursepaname" Placeholder="PA Name"/>
-                <Label Text="PA Assesment Notes"></Label>
-                <Editor x:Name="addcoursepanotes" HeightRequest="100"></Editor>
-                <Label Text="PA Assesment Date"></Label>
-                <DatePicker x:Name="padate"></DatePicker>
-
                 <Button Text="Save Course"
                     VerticalOptions="EndAndExpand"
                     WidthRequest="150"

@@ -12,9 +12,58 @@ namespace MobileAppProject
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class EditCourse : ContentPage
 	{
-		public EditCourse ()
+        DataHelper dh = new DataHelper();
+        DBCourse selectedCourse;
+		public EditCourse (DBCourse selectedCourse)
 		{
 			InitializeComponent ();
+            this.selectedCourse = selectedCourse;
 		}
-	}
+
+        private void ContentPage_Appearing(object sender, EventArgs e)
+        {
+            editcourse.Text = selectedCourse.coursetitle;
+            edittypepicker.SelectedItem = selectedCourse.status;
+            courseeditstart.Date = selectedCourse.coursestartdate;
+            courseeditend.Date = selectedCourse.courseenddate;
+            editcoursename.Text = selectedCourse.instructorname;
+            editcourseemail.Text = selectedCourse.instructoremail;
+            editcoursephone.Text = selectedCourse.instructorphonenumber;
+
+            List<DBAssesment> relatedAssesments = dh.SelectAssesments(selectedCourse.courseid);
+            list.ItemsSource = relatedAssesments;
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button_Clicked_Save(object sender, EventArgs e)
+        {
+            if (editcoursephone.Text != null && editcoursename.Text != null && editcourseemail != null)
+            {
+                selectedCourse.coursetitle = editcourse.Text;
+                selectedCourse.status = edittypepicker.SelectedItem.ToString();
+                selectedCourse.coursestartdate = courseeditstart.Date;
+                selectedCourse.courseenddate = courseeditend.Date;
+                selectedCourse.instructorname = editcoursename.Text;
+                selectedCourse.instructoremail = editcourseemail.Text;
+                selectedCourse.instructorphonenumber = editcoursephone.Text;
+
+                dh.UpdateCourse(selectedCourse);
+                Navigation.PopModalAsync();
+            }
+            else
+            {
+                DisplayAlert("Alert", "Make sure Instructor Information is filled out!", "Ok");
+            }
+        }
+
+        private void DeleteButton_Clicked(object sender, EventArgs e)
+        {
+            dh.DeleteCourse(selectedCourse);
+            Navigation.PopModalAsync();
+        }
+    }
 }

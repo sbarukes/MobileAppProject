@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileAppProject.AddAssesment">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Assesment Information" FontSize="36" Margin="0,0,0,50" HorizontalOptions="CenterAndExpand"></Label>
+
+            <Picker x:Name="addassesmenttype">
+                <Picker.Items>
+                    <x:String>OA</x:String>
+                    <x:String>PA</x:String>
+                </Picker.Items>
+            </Picker>
+            
+            <Entry x:Name="addassesmentname" Placeholder="Assesment Name"/>
+            <Label Text="Assesment Notes"></Label>
+            <Editor x:Name="addassesmentnotes" HeightRequest="100"></Editor>
+            <Label Text="Assesment Date"></Label>
+            <DatePicker x:Name="assesmentdate"></DatePicker>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

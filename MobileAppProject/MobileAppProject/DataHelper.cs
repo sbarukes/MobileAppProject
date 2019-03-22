@@ -19,6 +19,7 @@ namespace MobileAppProject
                 {
                     con.CreateTable<DBCourse>();
                     con.CreateTable<DBTerm>();
+                    con.CreateTable<DBAssesment>();
                     return true;
                 }
             }
@@ -60,6 +61,22 @@ namespace MobileAppProject
             }
         }
 
+        public bool InsertIntoAssesment(DBAssesment assesment)
+        {
+            try
+            {
+                using (var con = new SQLiteConnection(System.IO.Path.Combine(folder, "App.db")))
+                {
+                    con.Insert(assesment);
+                    return true;
+                }
+            }
+            catch (SQLiteException sqlex)
+            {
+                return false;
+            }
+        }
+
         public bool DeleteCourse(DBCourse course)
         {
             try
@@ -92,6 +109,22 @@ namespace MobileAppProject
             }
         }
 
+        public bool DeleteAssesment(DBAssesment assesment)
+        {
+            try
+            {
+                using (var con = new SQLiteConnection(System.IO.Path.Combine(folder, "App.db")))
+                {
+                    con.Delete(assesment);
+                    return true;
+                }
+            }
+            catch (SQLiteException sqlex)
+            {
+                return false;
+            }
+        }
+
         public List<DBCourse> SelectCourses(int tid)
         {
             try
@@ -99,6 +132,21 @@ namespace MobileAppProject
                 using (var con = new SQLiteConnection(System.IO.Path.Combine(folder, "App.db")))
                 {
                     return con.Table<DBCourse>().Where(x => x.termid == tid).ToList();
+                }
+            }
+            catch (SQLiteException sqlex)
+            {
+                return null;
+            }
+        }
+
+        public List<DBAssesment> SelectAssesments(int cid)
+        {
+            try
+            {
+                using (var con = new SQLiteConnection(System.IO.Path.Combine(folder, "App.db")))
+                {
+                    return con.Table<DBAssesment>().Where(x => x.courseid == cid).ToList();
                 }
             }
             catch (SQLiteException sqlex)
@@ -145,6 +193,22 @@ namespace MobileAppProject
                 using (var con = new SQLiteConnection(System.IO.Path.Combine(folder, "App.db")))
                 {
                     con.Update(term);
+                    return true;
+                }
+            }
+            catch (SQLiteException sqlex)
+            {
+                return false;
+            }
+        }
+
+        public bool UpdateAssesment(DBAssesment assesment)
+        {
+            try
+            {
+                using (var con = new SQLiteConnection(System.IO.Path.Combine(folder, "App.db")))
+                {
+                    con.Update(assesment);
                     return true;
                 }
             }
