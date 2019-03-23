@@ -26,6 +26,7 @@ namespace MobileAppProject
             edittypepicker.SelectedItem = selectedCourse.status;
             courseeditstart.Date = selectedCourse.coursestartdate;
             courseeditend.Date = selectedCourse.courseenddate;
+            editcoursenotes.Text = selectedCourse.notes;
             editcoursename.Text = selectedCourse.instructorname;
             editcourseemail.Text = selectedCourse.instructoremail;
             editcoursephone.Text = selectedCourse.instructorphonenumber;
@@ -34,9 +35,19 @@ namespace MobileAppProject
             list.ItemsSource = relatedAssesments;
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private void list_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
+            var selectedAssesment = list.SelectedItem as DBAssesment;
 
+            if (selectedAssesment != null)
+            {
+                Navigation.PushModalAsync(new EditAssesment(selectedAssesment));
+            }
+        }
+
+        async private void AssesmentButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new NavigationPage(new AddAssesment(selectedCourse.courseid)));
         }
 
         private void Button_Clicked_Save(object sender, EventArgs e)
@@ -65,5 +76,6 @@ namespace MobileAppProject
             dh.DeleteCourse(selectedCourse);
             Navigation.PopModalAsync();
         }
+        
     }
 }

@@ -1,9 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MobileAppProject.EditAssesment">
+             x:Class="MobileAppProject.EditAssesment"
+             Appearing="ContentPage_Appearing">
     <ContentPage.Content>
-        <StackLayout>
+        <ScrollView>
+            <StackLayout>
             <Label Text="Assesment Information" FontSize="36" Margin="0,0,0,50" HorizontalOptions="CenterAndExpand"></Label>
             
             <Picker x:Name="editassesmenttype">
@@ -14,10 +16,11 @@
             </Picker>
 
             <Entry x:Name="editassesmentname" Placeholder="Assesment Name"/>
-            <Label Text="Assesment Notes"></Label>
-            <Editor x:Name="editassesmentnotes" HeightRequest="100"></Editor>
             <Label Text="Assesment Date"></Label>
             <DatePicker x:Name="assesmentdate"></DatePicker>
+            <Button Text="Save Assesment" WidthRequest="150" Clicked="SaveButton_Clicked"></Button>
+            <Button Text="Delete Assesment" WidthRequest="150" Clicked="DeleteButton_Clicked"></Button>
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

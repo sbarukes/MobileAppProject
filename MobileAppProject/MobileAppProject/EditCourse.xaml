@@ -23,23 +23,26 @@
                 <Label Text="Course End Date"></Label>
                 <DatePicker x:Name="courseeditend" Margin="0,0,0,50"></DatePicker>
 
+                <Label Text="Course Notes"></Label>
+                <Editor x:Name="editcoursenotes" HeightRequest="100"></Editor>
+
                 <Label Text="Instructor Information" FontSize="36" Margin="0,0,0,50" HorizontalOptions="CenterAndExpand"></Label>
                 <Entry x:Name="editcoursename" Placeholder="Instructor Name"/>
                 <Entry x:Name="editcoursephone" Placeholder="Instructor Phone"/>
                 <Entry x:Name="editcourseemail" Placeholder="Instructor Email"/>
 
-                <Button Text="Add Assesment" WidthRequest="150" Clicked="Button_Clicked"></Button>
+                <Button Text="Add Assesment" WidthRequest="150" Clicked="AssesmentButton_Clicked"></Button>
                 <Label Text="Assesment List" FontSize="36" Margin="0,0,0,50" HorizontalOptions="CenterAndExpand"></Label>
 
-                <ListView x:Name="list">
+                <ListView x:Name="list" ItemSelected="list_ItemSelected">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
                                 <StackLayout Orientation="Horizontal" 
                         HorizontalOptions="FillAndExpand"
                         Margin="20, 10, 20, 0" >
-                                    <Label Text="{Binding coursetitle}" HorizontalOptions="StartAndExpand" />
-                                    <Label Text="{Binding instructorname}" />
+                                    <Label Text="{Binding type}" HorizontalOptions="StartAndExpand" />
+                                    <Label Text="{Binding assesmentname}" />
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>

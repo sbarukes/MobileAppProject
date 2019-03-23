@@ -14,6 +14,7 @@ namespace MobileAppProject
 
         public string coursetitle { get; set; }
         public string status { get; set; }
+        public string notes { get; set; }
         public DateTime coursestartdate { get; set; }
         public DateTime courseenddate { get; set; }
 

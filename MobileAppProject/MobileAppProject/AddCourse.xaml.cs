@@ -26,6 +26,7 @@ namespace MobileAppProject
                 course.coursetitle = addcourse.Text;
                 course.coursestartdate = courseaddstart.Date;
                 course.courseenddate = courseaddend.Date;
+                course.notes = addcoursenotes.Text;
                 course.status = addtypepicker.SelectedItem.ToString();
                 course.instructorname = addcoursename.Text;
                 course.instructoremail = addcourseemail.Text;

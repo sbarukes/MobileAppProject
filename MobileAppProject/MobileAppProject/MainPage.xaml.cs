@@ -13,6 +13,7 @@ namespace MobileAppProject
     public partial class MainPage : ContentPage
     {
         List<DBTerm> terms;
+        int counter = 0;
 
         public MainPage()
         {
@@ -29,6 +30,13 @@ namespace MobileAppProject
         {
             DataHelper dh = new DataHelper();
             bool exists = dh.createDB();
+
+            if(counter == 0)
+            {
+                dh.createData();
+                counter = 1;
+            }
+            
 
             if (exists)
             {

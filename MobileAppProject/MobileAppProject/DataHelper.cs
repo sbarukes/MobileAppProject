@@ -29,6 +29,60 @@ namespace MobileAppProject
             }
         }
 
+        public void createData()
+        {
+            using (var con = new SQLiteConnection(System.IO.Path.Combine(folder, "App.db")))
+            {
+
+                DBTerm TermInsert = new DBTerm();
+                DBCourse CourseInsert = new DBCourse();
+                DBAssesment AssesmentInsert1 = new DBAssesment();
+                DBAssesment AssesmentInsert2 = new DBAssesment();
+
+                var termCheck = con.Table<DBTerm>().Where(x => x.title == "Test Term").ToList();
+
+                if(termCheck.Count == 0)
+                {
+                    TermInsert.title = "Test Term";
+                    TermInsert.start = DateTime.Today.AddDays(7);
+                    TermInsert.end = DateTime.Today.AddDays(14);
+                    InsertIntoTerm(TermInsert);
+
+                    var relatedTermCheck = con.Table<DBTerm>().Where(x => x.title == "Test Term").ToList();
+
+                    if(relatedTermCheck.Count == 1)
+                    {
+                        CourseInsert.coursetitle = "Test Course";
+                        CourseInsert.coursestartdate = DateTime.Today.AddDays(7);
+                        CourseInsert.courseenddate = DateTime.Today.AddDays(14);
+                        CourseInsert.instructorname = "Austin Rukes";
+                        CourseInsert.instructoremail = "arukes@wgu.edu";
+                        CourseInsert.instructorphonenumber = "765-592-2466";
+                        CourseInsert.termid = relatedTermCheck[0].termid;
+                        CourseInsert.status = "Active";
+                        InsertIntoCourse(CourseInsert);
+
+                        var relatedCourseCheck = con.Table<DBCourse>().Where(x => x.coursetitle == "Test Course").ToList();
+
+                        if (relatedCourseCheck.Count > 0)
+                        {
+                            AssesmentInsert1.assesmentname = "Test Course 1";
+                            AssesmentInsert1.type = "OA";
+                            AssesmentInsert1.assesmentdate = DateTime.Today.AddDays(14);
+                            AssesmentInsert1.courseid = relatedCourseCheck[0].courseid;
+                            AssesmentInsert2.assesmentname = "Test Course 2";
+                            AssesmentInsert2.type = "PA";
+                            AssesmentInsert2.assesmentdate = DateTime.Today.AddDays(14);
+                            AssesmentInsert2.courseid = relatedCourseCheck[0].courseid;
+                            InsertIntoAssesment(AssesmentInsert1);
+                            InsertIntoAssesment(AssesmentInsert2);
+                        }
+                    }
+                }
+            }
+        }
+
+
         public bool InsertIntoCourse(DBCourse course)
         {
             try

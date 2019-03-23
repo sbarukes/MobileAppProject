@@ -22,6 +22,9 @@
                 <Label Text="Course End Date"></Label>
                 <DatePicker x:Name="courseaddend" Margin="0,0,0,50"></DatePicker>
 
+                <Label Text="Course Notes"></Label>
+                <Editor x:Name="addcoursenotes" HeightRequest="100"></Editor>
+
                 <Label Text="Instructor Information" FontSize="36" Margin="0,0,0,50" HorizontalOptions="CenterAndExpand"></Label>
                 <Entry x:Name="addcoursename" Placeholder="Instructor Name"/>
                 <Entry x:Name="addcoursephone" Placeholder="Instructor Phone"/>

@@ -1,4 +1,5 @@
-﻿using SQLite;
+﻿
+using SQLite;
 using SQLiteNetExtensions.Attributes;
 using System;
 using System.Collections.Generic;
@@ -9,11 +10,11 @@ namespace MobileAppProject
     [Table("Assesments")]
     public class DBAssesment
     {
-        public int assesmentid { get; set; }
+        [PrimaryKey, AutoIncrement]
+        public int? assesmentid { get; set; }
         //Assesment Info
         public string type { get; set; }
         public string assesmentname { get; set; }
-        public string notes { get; set; }
         public DateTime assesmentdate { get; set; }
 
         //DBAssesment Reference

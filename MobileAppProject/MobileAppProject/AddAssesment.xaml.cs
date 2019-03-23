@@ -12,9 +12,22 @@ namespace MobileAppProject
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class AddAssesment : ContentPage
 	{
-		public AddAssesment ()
+        DBAssesment assesment = new DBAssesment();
+        DataHelper dh = new DataHelper();
+
+        public AddAssesment (int relatedCourseID)
 		{
 			InitializeComponent ();
+            assesment.courseid = relatedCourseID;
 		}
-	}
+
+        private void SaveButton_Clicked(object sender, EventArgs e)
+        {
+            assesment.assesmentname = addassesmentname.Text;
+            assesment.type = addassesmenttype.SelectedItem.ToString();
+            assesment.assesmentdate = assesmentdate.Date;
+            dh.InsertIntoAssesment(assesment);
+            Navigation.PopModalAsync();
+        }
+    }
 }
