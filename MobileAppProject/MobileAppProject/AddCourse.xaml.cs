@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.Essentials;
 
 namespace MobileAppProject
 {
@@ -39,6 +40,16 @@ namespace MobileAppProject
             {
                 DisplayAlert("Alert", "Make sure Instructor Information is filled out and the stard date is before the end date!", "Ok");
             }
+        }
+
+        //Notes Sharing
+        private async void sharenotes_Clicked(object sender, EventArgs e)
+        {
+            await Share.RequestAsync(new ShareTextRequest
+            {
+                Text = addcoursenotes.Text,
+                Title = "Notes"
+            });
         }
     }
 }

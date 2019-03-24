@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.Essentials;
 
 namespace MobileAppProject
 {
@@ -33,6 +34,16 @@ namespace MobileAppProject
 
             List<DBAssesment> relatedAssesments = dh.SelectAssesments(selectedCourse.courseid);
             list.ItemsSource = relatedAssesments;
+        }
+
+        //Notes Sharing
+        private async void sharenotes_Clicked(object sender, EventArgs e)
+        {
+            await Share.RequestAsync(new ShareTextRequest
+            {
+                Text = editcoursenotes.Text,
+                Title = "Notes"
+            });
         }
 
         private void list_ItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -76,6 +87,6 @@ namespace MobileAppProject
             dh.DeleteCourse(selectedCourse);
             Navigation.PopModalAsync();
         }
-        
+
     }
 }
