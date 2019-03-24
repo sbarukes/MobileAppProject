@@ -19,15 +19,22 @@ namespace MobileAppProject
 
         public void AddTermNew(object sender, EventArgs arg)
         {
-            DBTerm term = new DBTerm();
-            term.title = termtitle.Text;
-            term.start = termstart.Date;
-            term.end = termend.Date;
+            if (termstart.Date <= termend.Date)
+            {
+                DBTerm term = new DBTerm();
+                term.title = termtitle.Text;
+                term.start = termstart.Date;
+                term.end = termend.Date;
 
-            DataHelper dh = new DataHelper();
-            dh.InsertIntoTerm(term);
+                DataHelper dh = new DataHelper();
+                dh.InsertIntoTerm(term);
 
-            Navigation.PopModalAsync();
+                Navigation.PopModalAsync();
+            }
+            else
+            {
+                DisplayAlert("Alert!", "Make sure the start date is before the end date.", "Ok");
+            }
         }
         
     }

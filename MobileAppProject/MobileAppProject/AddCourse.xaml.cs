@@ -22,7 +22,7 @@ namespace MobileAppProject
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            if (addcoursephone.Text != null && addcoursename.Text != null && addcourseemail != null) {
+            if ((addcoursephone.Text != null && addcoursename.Text != null && addcourseemail.Text != null) && (courseaddstart.Date <= courseaddend.Date)) {
                 course.coursetitle = addcourse.Text;
                 course.coursestartdate = courseaddstart.Date;
                 course.courseenddate = courseaddend.Date;
@@ -37,7 +37,7 @@ namespace MobileAppProject
             }
             else
             {
-                DisplayAlert("Alert", "Make sure Instructor Information is filled out!", "Ok");
+                DisplayAlert("Alert", "Make sure Instructor Information is filled out and the stard date is before the end date!", "Ok");
             }
         }
     }

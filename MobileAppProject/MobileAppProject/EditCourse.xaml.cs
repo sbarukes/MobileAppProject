@@ -52,7 +52,7 @@ namespace MobileAppProject
 
         private void Button_Clicked_Save(object sender, EventArgs e)
         {
-            if (editcoursephone.Text != null && editcoursename.Text != null && editcourseemail != null)
+            if ((editcoursephone.Text != "" && editcoursename.Text != "" && editcourseemail.Text != "") && (courseeditstart.Date <= courseeditend.Date))
             {
                 selectedCourse.coursetitle = editcourse.Text;
                 selectedCourse.status = edittypepicker.SelectedItem.ToString();
@@ -67,7 +67,7 @@ namespace MobileAppProject
             }
             else
             {
-                DisplayAlert("Alert", "Make sure Instructor Information is filled out!", "Ok");
+                DisplayAlert("Alert", "Make sure Instructor Information is filled out and the stard date is before the end date!", "Ok");
             }
         }
 

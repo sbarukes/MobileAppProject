@@ -33,11 +33,17 @@ namespace MobileAppProject
 
         private void SaveButton_Clicked(object sender, EventArgs e)
         {
-            selectedTerm.title = termtitle.Text;
-            selectedTerm.start = termstart.Date;
-            selectedTerm.end = termend.Date;
-            dh.UpdateTerm(selectedTerm);
-            Navigation.PopModalAsync();
+            if (termstart.Date <= termend.Date) {
+                selectedTerm.title = termtitle.Text;
+                selectedTerm.start = termstart.Date;
+                selectedTerm.end = termend.Date;
+                dh.UpdateTerm(selectedTerm);
+                Navigation.PopModalAsync();
+            }
+            else
+            {
+                DisplayAlert("Alert!", "Make sure the start date is before the end date.", "Ok");
+            }
         }
 
         private void DeleteButton_Clicked(object sender, EventArgs e)
