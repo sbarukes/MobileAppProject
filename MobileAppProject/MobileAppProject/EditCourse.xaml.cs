@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Essentials;
+using Plugin.LocalNotifications;
 
 namespace MobileAppProject
 {
@@ -75,6 +76,12 @@ namespace MobileAppProject
 
                 dh.UpdateCourse(selectedCourse);
                 Navigation.PopModalAsync();
+
+                //Course Notification Set
+                if (editnotificationpicker.SelectedItem.ToString() == "Yes"){
+                    CrossLocalNotifications.Current.Show("Course Start", $"{editcourse.Text} starts today!", 1, courseeditstart.Date);
+                    CrossLocalNotifications.Current.Show("Course End", $"{editcourse.Text} ends today!", 2, courseeditend.Date);
+                }
             }
             else
             {

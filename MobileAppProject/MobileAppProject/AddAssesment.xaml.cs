@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Plugin.LocalNotifications;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,6 +29,12 @@ namespace MobileAppProject
             assesment.assesmentdate = assesmentdate.Date;
             dh.InsertIntoAssesment(assesment);
             Navigation.PopModalAsync();
+
+            //Assesment Notification Set
+            if (addnotificationpicker.SelectedItem.ToString() == "Yes")
+            {
+                CrossLocalNotifications.Current.Show("Assesment", $"{addassesmentname.Text} is today!", 3, assesmentdate.Date);
+            }
         }
     }
 }

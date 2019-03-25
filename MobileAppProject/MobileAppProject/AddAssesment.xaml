@@ -17,7 +17,16 @@
             <Entry x:Name="addassesmentname" Placeholder="Assesment Name"/>
             <Label Text="Assesment Date"></Label>
             <DatePicker x:Name="assesmentdate"></DatePicker>
-            <Button Text="Save Assesment" WidthRequest="150" Clicked="SaveButton_Clicked"></Button>
+
+                <Label Text="Would you like notifications for assesment date"></Label>
+                <Picker x:Name="addnotificationpicker">
+                    <Picker.Items>
+                        <x:String>Yes</x:String>
+                        <x:String>No</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <Button Text="Save Assesment" WidthRequest="150" Clicked="SaveButton_Clicked"></Button>
             </StackLayout>
         </ScrollView>
 

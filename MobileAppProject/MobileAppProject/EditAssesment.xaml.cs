@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Plugin.LocalNotifications;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -37,6 +38,12 @@ namespace MobileAppProject
 
             dh.UpdateAssesment(selectedAssesment);
             Navigation.PopModalAsync();
+
+            //Assesment Notification Set
+            if (editnotificationpicker.SelectedItem.ToString() == "Yes")
+            {
+                CrossLocalNotifications.Current.Show("Assesment", $"{editassesmentname.Text} is today!", 3, assesmentdate.Date);
+            }
         }
 
         private void DeleteButton_Clicked(object sender, EventArgs e)

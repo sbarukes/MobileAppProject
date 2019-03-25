@@ -23,6 +23,14 @@
                 <Label Text="Course End Date"></Label>
                 <DatePicker x:Name="courseeditend" Margin="0,0,0,50"></DatePicker>
 
+                <Label Text="Would you like notifications for start and end dates?"></Label>
+                <Picker x:Name="editnotificationpicker">
+                    <Picker.Items>
+                        <x:String>Yes</x:String>
+                        <x:String>No</x:String>
+                    </Picker.Items>
+                </Picker>
+
                 <Label Text="Course Notes"></Label>
                 <Editor x:Name="editcoursenotes" HeightRequest="100"></Editor>
                 <Button x:Name="sharenotes" Text="Share Notes" Clicked="sharenotes_Clicked"></Button>

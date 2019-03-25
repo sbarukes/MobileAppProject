@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Essentials;
+using Plugin.LocalNotifications;
 
 namespace MobileAppProject
 {
@@ -35,6 +36,13 @@ namespace MobileAppProject
 
                 dh.InsertIntoCourse(course);
                 Navigation.PopModalAsync();
+
+                //Course Notification Set
+                if(addnotificationpicker.SelectedItem.ToString() == "Yes")
+                {
+                    CrossLocalNotifications.Current.Show("Course Start", $"{addcourse.Text} starts today!", 1, courseaddstart.Date);
+                    CrossLocalNotifications.Current.Show("Course End", $"{addcourse.Text} ends today!", 2, courseaddend.Date);
+                }
             }
             else
             {
