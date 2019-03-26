@@ -7,8 +7,9 @@
         <ScrollView>
             <StackLayout>
             <Label Text="Assesment Information" FontSize="36" Margin="0,0,0,50" HorizontalOptions="CenterAndExpand"></Label>
-            
-            <Picker x:Name="editassesmenttype">
+
+                <Label Text="Assesment Type"></Label>
+                <Picker x:Name="editassesmenttype">
                 <Picker.Items>
                     <x:String>OA</x:String>
                     <x:String>PA</x:String>
